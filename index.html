@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H&C infotech - Transforming IT Careers</title>
+
+
+
+<!-- add icon link  for browser logo  -->
+<link rel="icon" href="./logo Har chan solution.png" type="image/x-icon">
+
+
+
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #523176;
+            --secondary-color: #ff5722;
+            --accent-color: #4caf50;
+            --dark-color: #263238;
+            --light-color: #f5f5f5;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .feature-card {
+            border: none;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .course-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--secondary-color);
+        }
+
+        .testimonial-card {
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .stats-section {
+            background-color: var(--light-color);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* About Section Styles */
+        .about-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .team-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 0 auto 20px;
+        }
+
+        .team-social {
+            margin-top: 15px;
+        }
+
+        .team-social a {
+            color: var(--primary-color);
+            margin: 0 5px;
+            font-size: 1.2rem;
+        }
+
+        .mission-vision {
+            background-color: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            height: 100%;
+        }
+
+        /* Animation classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .stat-item {
+                margin-bottom: 20px;
+            }
+
+            .team-img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar-brand img {
+                height: 30px;
+            }
+
+            .hero-section {
+                padding: 40px 0;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Smartwatch specific */
+        @media (max-width: 300px) {
+            .navbar-brand span {
+                display: none;
+            }
+
+            .hero-buttons .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="./logo Har chan solution.png" alt="H&C infotech">
+                <span class="ms-2">H&C infotech</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#courses">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#internships">Internships</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="ms-lg-3 mt-3 mt-lg-0">
+                    <a href="#login" class="btn btn-outline-light me-2">Login</a>
+                    <a href="#register" class="btn btn-primary">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content slide-up">
+                    <h1 class="display-4 fw-bold mb-4">Transform Your IT Career with H&C infotech</h1>
+                    <p class="lead mb-4">Join our industry-relevant courses and internships to gain practical skills and
+                        launch your dream career in technology.</p>
+                    <div class="hero-buttons d-flex flex-wrap gap-2">
+                        <a href="#courses" class="btn btn-primary btn-lg px-4">Explore Courses</a>
+                        <a href="#internships" class="btn btn-secondary btn-lg px-4">Apply for Internship</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block fade-in">
+                    <img src="./Education-Tech-1920x1080.jpg" alt="Tech Education"
+                        class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Why Choose H&C infotech?</h2>
+                <p class="lead text-muted">We provide the perfect platform to kickstart your IT career</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card card p-4 shadow-sm">
+                        <div class="text-center">
+                            <div class="feature-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3>Industry-Relevant Courses</h3>
+                            <p class="text-muted">Learn the most in-demand skills from industry experts with hands-on
+                                projects.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card card p-4 shadow-sm">
+                        <div class="text-center">
+                            <div class="feature-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3>Guaranteed Internships</h3>
+                            <p class="text-muted">Get real work experience with our partner companies during your
+                                learning journey.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card card p-4 shadow-sm">
+                        <div class="text-center">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3>Career Support</h3>
+                            <p class="text-muted">Resume building, interview preparation, and placement assistance for
+                                all students.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card card p-4 shadow-sm">
+                        <div class="text-center">
+                            <div class="feature-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h3>Certification</h3>
+                            <p class="text-muted">Earn recognized certificates that validate your skills to employers
+                                worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Courses -->
+    <section id="courses" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Our Popular Courses</h2>
+                <p class="lead text-muted">Master the skills that companies are looking for</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="course-card card shadow-sm">
+                        <img src="./web devlopment.jpg" class="card-img-top"
+                            alt="Full Stack Development">
+                        <span class="badge course-badge">Bestseller</span>
+                        <div class="card-body">
+                            <h5 class="card-title">Full Stack Development</h5>
+                            <p class="card-text text-muted">Master frontend and backend technologies to build complete
+                                web applications.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="rating">
+                                    <span class="text-warning">★★★★★</span>
+                                    <span class="text-muted ms-1">(1245)</span>
+                                </div>
+                                <span class="text-primary fw-bold">RS1990</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="course-card card shadow-sm">
+                        <img src="./AI-and-Data-Science.jpg" class="card-img-top"
+                            alt="Data Science">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Science & AI</h5>
+                            <p class="card-text text-muted">Learn Python, machine learning, and data analysis to become
+                                a data scientist.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="rating">
+                                    <span class="text-warning">★★★★☆</span>
+                                    <span class="text-muted ms-1">(876)</span>
+                                </div>
+                                <span class="text-primary fw-bold">RS2498</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="course-card card shadow-sm">
+                        <img src="./Cloud Computing.jpg" class="card-img-top"
+                            alt="Cloud Computing">
+                        <span class="badge course-badge">New</span>
+                        <div class="card-body">
+                            <h5 class="card-title">Cloud Computing</h5>
+                            <p class="card-text text-muted">Master AWS, Azure, and GCP to deploy and manage cloud
+                                infrastructure.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="rating">
+                                    <span class="text-warning">★★★★★</span>
+                                    <span class="text-muted ms-1">(542)</span>
+                                </div>
+                                <span class="text-primary fw-bold">RS1790</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#all-courses" class="btn btn-outline-primary">View All Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">About Harchan Solutions</h2>
+                <p class="lead text-muted">Empowering the next generation of IT professionals</p>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Our Story</h3>
+                    <p>Founded in 2018, Harchan Solutions began with a simple mission: to bridge the gap between
+                        academic knowledge and industry requirements in the IT sector. What started as a small training
+                        center has now grown into a leading EduTech platform transforming thousands of careers.</p>
+                    <p>We recognized that traditional education often fails to provide the practical skills needed in
+                        today's fast-paced tech industry. Our intensive programs combine cutting-edge curriculum with
+                        real-world projects and guaranteed internships to create job-ready professionals.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="./group pic.jpeg" alt="Harchan Team"
+                        class="img-fluid rounded shadow">
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="mission-vision">
+                        <h4><i class="fas fa-bullseye text-primary me-2"></i> Our Mission</h4>
+                        <p>To democratize access to quality tech education and provide every aspiring IT professional
+                            with the skills, experience, and opportunities needed to build successful careers in the
+                            digital economy.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mission-vision">
+                        <h4><i class="fas fa-eye text-primary me-2"></i> Our Vision</h4>
+                        <p>To become the most trusted career transformation platform in the IT education space,
+                            recognized for our industry-aligned programs and exceptional student outcomes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mb-5">
+                <h3 class="mb-4">Meet Our Leadership Team</h3>
+                <p class="text-muted">The passionate professionals driving our mission forward</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="team-card card p-4 shadow-sm">
+                        <img src="./chandan.jfif" alt="Founder" class="team-img">
+                        <h4>Chandan shukla</h4>
+                        <h6 class="text-primary">Founder & Director</h6>
+                        <p>Education specialist with expertise in curriculum development and student success. </p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-card card p-4 shadow-sm">
+                        <img src="./harsh-removebg-preview.png" alt="Co-Founder"
+                            class="team-img">
+                        <h4>Harsh Kumar</h4>
+                        <h6 class="text-primary">Co-Founder & CEO</h6>
+                        <p> 5+ years in IT education and corporate training. Former CTO at TechMentor.
+                            </p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-card card p-4 shadow-sm">
+                        <img src="./User-Profile-PNG-Picture.png" alt="AVP" class="team-img">
+                        <h4>AVP</h4>
+                        <h6 class="text-primary">AVP - Corporate Relations</h6>
+                        <p>Connects students with top tech companies through strategic partnerships.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internship Program -->
+    <section id="internships" class="py-5 bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="./Internship program.jpg" alt="Internship Program"
+                        class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title mb-4">Industry Internship Program</h2>
+                    <p class="lead">Gain real-world experience while you learn with our integrated internship program.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Work on live projects
+                            with real companies</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Mentorship from industry
+                            professionals</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Flexible timing to fit
+                            your schedule</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Potential for full-time
+                            job offers</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Certificate upon
+                            successful completion</li>
+                    </ul>
+                    <a href="#apply-internship" class="btn btn-primary mt-3">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-6 col-md-3 stat-item">
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">Students Trained</div>
+                </div>
+                <div class="col-6 col-md-3 stat-item">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Partner Companies</div>
+                </div>
+                <div class="col-6 col-md-3 stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Placement Rate</div>
+                </div>
+                <div class="col-6 col-md-3 stat-item">
+                    <div class="stat-number">4.9</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Success Stories</h2>
+                <p class="lead text-muted">What our students say about us</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card card p-4 shadow-sm bg-white">
+                        <div class="d-flex mb-3">
+                            <img src="./student rahul sharma.png" alt="Student"
+                                class="rounded-circle me-3" width="60">
+                            <div>
+                                <h5 class="mb-0">Rahul Sharma</h5>
+                                <p class="text-muted mb-0">Software Developer at TechCorp</p>
+                            </div>
+                        </div>
+                        <p class="card-text">"Harchan's Full Stack course transformed my career. The hands-on projects
+                            and internship gave me the confidence to crack interviews and land my dream job."</p>
+                        <div class="rating">
+                            <span class="text-warning">★★★★★</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card card p-4 shadow-sm bg-white">
+                        <div class="d-flex mb-3">
+                            <img src="./student girl.png" alt="Student"
+                                class="rounded-circle me-3" width="60">
+                            <div>
+                                <h5 class="mb-0">Priya Patel</h5>
+                                <p class="text-muted mb-0">Data Scientist at DataInsights</p>
+                            </div>
+                        </div>
+                        <p class="card-text">"The Data Science program was comprehensive and practical. The internship
+                            helped me apply concepts to real problems, making me job-ready immediately."</p>
+                        <div class="rating">
+                            <span class="text-warning">★★★★★</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card card p-4 shadow-sm bg-white">
+                        <div class="d-flex mb-3">
+                            <img src="./student-boy-10974481-8779457.webp" alt="Student"
+                                class="rounded-circle me-3" width="60">
+                            <div>
+                                <h5 class="mb-0">Amit Kumar</h5>
+                                <p class="text-muted mb-0">Cloud Engineer at CloudNine</p>
+                            </div>
+                        </div>
+                        <p class="card-text">"Coming from a non-tech background, I was skeptical. But Harchan's
+                            structured approach and mentor support helped me transition successfully into cloud
+                            computing."</p>
+                        <div class="rating">
+                            <span class="text-warning">★★★★☆</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Ready to Transform Your Career?</h2>
+            <p class="lead mb-4">Join thousands of students who have successfully launched their IT careers with Harchan
+                Solutions.</p>
+            <a href="#register" class="btn btn-light btn-lg px-4 me-2">Get Started Now</a>
+            <a href="#contact" class="btn btn-outline-light btn-lg px-4">Talk to Counselor</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="./logo Har chan solution.png" alt="H&C infotech" width="50px">
+                <span class="ms-2">H&C infotech</span>
+                    <p>Transforming education and careers through industry-relevant training and practical experience.
+                    </p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="#">Home</a></li>
+                        <li class="mb-2"><a href="#about">About Us</a></li>
+                        <li class="mb-2"><a href="#courses">Courses</a></li>
+                        <li class="mb-2"><a href="#internships">Internships</a></li>
+                        <li class="mb-2"><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="mb-4">Courses</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="#">Full Stack Development</a></li>
+                        <li class="mb-2"><a href="#">Data Science</a></li>
+                        <li class="mb-2"><a href="#">Cloud Computing</a></li>
+                        <li class="mb-2"><a href="#">Cyber Security</a></li>
+                        <li class="mb-2"><a href="#">All Courses</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Contact Us</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Tech Park, Bangalore, India</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +91 9876543210</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> info@H&Cinfotech.com</li>
+                    </ul>
+                    <div class="mt-4">
+                        <h6>Subscribe to Newsletter</h6>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                            <button class="btn btn-secondary" type="button">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3" style="border-color: rgba(255,255,255,0.1);">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small mb-0">© 2025 H&C infotech. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="small mb-0">
+                        <a href="#" class="text-white-50 me-2">Privacy Policy</a>
+                        <a href="#" class="text-white-50">Terms of Service</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            const animateOnScroll = function () {
+                const elements = document.querySelectorAll('.slide-up, .fade-in');
+
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    if (elementPosition < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+
+            // Initial check
+            animateOnScroll();
+
+            // Check on scroll
+            window.addEventListener('scroll', animateOnScroll);
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Mobile menu close on click
+            const navLinks = document.querySelectorAll('.nav-link');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth < 992) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                            toggle: false
+                        });
+                        bsCollapse.hide();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
